@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.main-body {
+    height: 100vh;
+    background: linear-gradient(150deg, #DF98FA, #9055FF);
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.main-form {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    backdrop-filter: blur(2px);
+    color: cornsilk;
+    border-radius: 8px;
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.5);
+    animation: formGlow 2s infinite alternate;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.main-form input {
+    width: 100%;
+}
+
+input[type="email"] {
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 1rem 0;
+}
+button[type="submit"] {
+    border: none;
+    padding: 4px;
+}
+
+@keyframes formGlow {
+    from {box-shadow: 0 0 40px 1px rgba(0, 0, 0, 0.5);}
+    to {box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);}
+}
