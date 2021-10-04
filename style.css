@@ -15,12 +15,22 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    flex-direction: column;
+}
+
+.main-heading {
+    position: absolute;
+    top: 2rem;
+    background: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .main-form {
     background-color: rgba(0, 0, 0, 0.1);
     padding: 2rem;
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     color: cornsilk;
     border-radius: 8px;
     box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.5);
@@ -41,9 +51,41 @@ input[type="email"] {
     padding: 8px;
     margin: 1rem 0;
 }
-button[type="submit"] {
+#sub-btn {
     border: none;
-    padding: 4px;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 6px;
+    float: right;
+}
+
+.main-body .sdg-container {
+    position: absolute;
+    bottom: 4rem;
+    backdrop-filter: blur(1px);
+    display: flex;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.box {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    display: flex;
+}
+
+.box img {
+    height: 6rem;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 440px) {
+    .box img {
+        height: 5rem;
+    }
 }
 
 @keyframes formGlow {
