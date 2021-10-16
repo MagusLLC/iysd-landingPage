@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IYSD | Indian Youth for Sustainable Development | Pre-Register</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -18,7 +21,7 @@
             <h1>Pre-Register Yourself for IYSD</h1>
             <form action="">
                 <input type="email" name="email" id="email" placeholder="SUBSCRIBE for our Newsletter">
-                <button id="sub-btn" type="submit">SUBSCRIBE</button>
+                <button id="sub-btn" type="submit" onclick="subMe()">SUBSCRIBE</button>
             </form>
         </div>
         <div class="sdg-container">
@@ -42,6 +45,7 @@
             </div>
         </div>
     </div>
+    <script src="subscribe.js"></script>
 </body>
 
 </html>
