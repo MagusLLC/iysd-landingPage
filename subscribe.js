@@ -11,6 +11,7 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const analytics = firebase.analytics();
 const db = firebase.firestore();
+var now = new Date();
 
 function subMe() {
     event.preventDefault();
@@ -24,7 +25,8 @@ function subMe() {
         } else {
             docRef.set({
                 email: email,
-                iKEY: "########"
+                iKEY: "########",
+                timestamp: now.toUTCString()
             });
             console.log("Congratulations, you are now registered for our website.");
         }
