@@ -42,9 +42,9 @@ function alreadyExist() {
     msg.style.backgroundColor = 'rgba(' + [218, 165, 32, 0.3].join(',') + ')';
 }
 
-function cannotCreate() {
+function cannotCreate(error) {
     show();
-    msg.innerText = error;
+    msg.innerText = error.message;
     setTimeout(() => {
         hide();
     }, 7000);
@@ -74,7 +74,7 @@ function subMe() {
         }
     }).catch((error) => {
         console.log("We faced an error please retry:", error);
-        cannotCreate();
+        cannotCreate(error);
     });
 
 }
