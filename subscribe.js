@@ -11,6 +11,46 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const analytics = firebase.analytics();
 const db = firebase.firestore();
+var now = new Date();
+var msg = document.getElementById("msg");
+
+function hide() {
+    msg.style.display = "none";
+}
+
+function show() {
+    msg.style.display = "flex";
+}
+
+function accountCreated() {
+    show();
+    msg.innerText = "You are now registered.";
+    setTimeout(() => {
+        hide();
+    }, 7000);
+    msg.style.borderColor = "lawngreen";
+    msg.style.backgroundColor = 'rgba(' + [126, 252, 0, 0.3].join(',') + ')';
+}
+
+function alreadyExist() {
+    show();
+    msg.innerText = "This record already exist.";
+    setTimeout(() => {
+        hide();
+    }, 7000);
+    msg.style.borderColor = "gold";
+    msg.style.backgroundColor = 'rgba(' + [218, 165, 32, 0.3].join(',') + ')';
+}
+
+function cannotCreate() {
+    show();
+    msg.innerText = error;
+    setTimeout(() => {
+        hide();
+    }, 7000);
+    msg.style.borderColor = "red";
+    msg.style.backgroundColor = 'rgba(' + [255, 0, 0, 0.3].join(',') + ')';
+}
 
 function subMe() {
     event.preventDefault();
@@ -21,15 +61,20 @@ function subMe() {
     docRef.get().then((doc) => {
         if (doc.exists) {
             console.log("email", email, "is already registered...");
+            alreadyExist();
         } else {
             docRef.set({
                 email: email,
-                iKEY: "########"
+                iKEY: "########",
+                timestamp: now.toUTCString()
             });
+
             console.log("Congratulations, you are now registered for our website.");
+            accountCreated();
         }
     }).catch((error) => {
         console.log("We faced an error please retry:", error);
+        cannotCreate();
     });
 
 }
