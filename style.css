@@ -70,6 +70,15 @@ input[type="email"]:focus {
     font-weight: bold;
     border-radius: 6px;
     float: right;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(200deg, rgb(7, 208, 235), rgb(7, 235, 75));
+    cursor: pointer;
+}
+
+#sub-btn:active {
+    background: linear-gradient(20deg, rgb(112, 198, 238), rgb(181, 117, 255));
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    color: white;
 }
 
 .main-body .sdg-container {
